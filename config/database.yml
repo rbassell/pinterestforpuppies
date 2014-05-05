@@ -19,7 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  #used to be sqlite
+  adapter: postgresql
+  #used to be db/production.sqlite3
+  database: pinterestforpuppies
   pool: 5
   timeout: 5000
+  encoding: unicode
