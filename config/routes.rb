@@ -1,6 +1,7 @@
 Pinterestforpuppies::Application.routes.draw do
   get "page/index"
   # get "page/index"
+  get "about" => "page#about"
 
   root "page#index"
   # The priority is based upon order of creation: first created -> highest priority.
