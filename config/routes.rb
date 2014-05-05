@@ -1,4 +1,5 @@
 Pinterestforpuppies::Application.routes.draw do
+  get "page/index"
   # get "page/index"
 
   root "page#index"
