@@ -18,7 +18,15 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
-      <li><a href="/costumes">Dogs Wearing Costumes</a></li>
+      <li><a href="/costumes">Dogs Wearing Costumes</a>
+       
+       <% if user_signed_in? %>
+        <li><%= link_to "Sign out", destroy_user_session_path %></li>
+      <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %> 
+
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
@@ -30,8 +38,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
+
 <div class="container">
+  <% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "alert alert-info") %>
+  <% end %>
 <%= yield %>
-</div>
 </body>
+
+</div>
 </html>
