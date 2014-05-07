@@ -1,2 +1,2 @@
-class IndexController < ApplicationController
+class AboutController < ApplicationController
 end
