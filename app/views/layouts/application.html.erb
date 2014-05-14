@@ -14,18 +14,21 @@
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
+   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/costumes">Dogs Wearing Costumes</a>
-       
-       <% if user_signed_in? %>
-        <li><%= link_to "Sign out", destroy_user_session_path %></li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Dogs Wearing Costumes", costumes_path %></li>
+      <li><%= link_to "Pins", pins_path %></li>
+      <% if user_signed_in? %>
+      <li><%= link_to "Account Settings", edit_user_registration_path %></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <li><%= link_to "Sign In", new_user_session_path %></li>
       <% end %> 
+    </ul>
+  </div><!-- /.navbar-collapse -->
 
     </ul>
   </div><!-- /.navbar-collapse -->
